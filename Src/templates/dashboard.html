@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | SalarySense AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="background-blur blur1"></div>
+<div class="background-blur blur2"></div>
+
+<header>
+    <nav>
+
+        <a href="/" class="logo">
+            📈 SalarySense AI
+        </a>
+
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/predict">Predict</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+
+<section class="features" style="padding-top:140px;">
+
+    <span class="tag">DATA ANALYTICS</span>
+
+    <h2>Salary Analytics Dashboard</h2>
+
+    <p style="color:#bfc9da; max-width:700px; margin:0 auto 50px;">
+        Explore important statistics from the employee salary dataset
+        used by SalarySense AI.
+    </p>
+
+
+    <div class="feature-grid">
+
+        <div class="card">
+            <i>👥</i>
+            <h3>{{ employee_count }}</h3>
+            <p>Total Employees</p>
+        </div>
+
+
+        <div class="card">
+            <i>💰</i>
+            <h3>₹{{ "{:,.0f}".format(average_salary) }}</h3>
+            <p>Average Salary</p>
+        </div>
+
+
+        <div class="card">
+            <i>📈</i>
+            <h3>₹{{ "{:,.0f}".format(maximum_salary) }}</h3>
+            <p>Highest Salary</p>
+        </div>
+
+
+        <div class="card">
+            <i>📉</i>
+            <h3>₹{{ "{:,.0f}".format(minimum_salary) }}</h3>
+            <p>Lowest Salary</p>
+        </div>
+
+    </div>
+
+
+    <div class="card" style="margin-top:40px;">
+
+        <h3>Model Information</h3>
+
+        <p>
+            SalarySense AI uses a Linear Regression model to estimate
+            employee salaries based on employee-related attributes such
+            as age, education, experience, job title, industry,
+            location and company size.
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+    SalarySense AI | Employee Salary Prediction System
+</footer>
+
+</body>
+</html>
